@@ -1,0 +1,55 @@
+Step: build-step-credential-initializer:
+
+{"level":"warn","ts":1549304120.3648474,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1549304120.365491,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-source:
+
+{"level":"warn","ts":1549304121.3115783,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1549304121.5113428,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/abayer/golang-experiment\" @ \"master\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-setup-jx-git-credentials:
+
+Generated Git credentials file /home/jenkins/git/credentials
+Step: build-step-setversion-step3:
+
+Step: build-step-build-step4:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Using helmBinary helm with feature flag: template-mode
+Initialising Helm 'init --client-only'
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
+Step: build-step-build-step5:
+
+Tag v0.0.1 created and pushed to remote origin
+Step: build-step-promote-step6:
+
+Converted /workspace/source/charts/golang-experiment to an unshallow repository
+Generating change log from git ref ef5db6288d44799bce3c7caa7ec78d292d4275c9 => 80c8b2790791433d37d73431d145e890aa3408cb
+Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+Finding issues in commit messages using git format
+No release found for abayer/golang-experiment and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/abayer/golang-experiment/releases/tag/v0.0.1
+generated: /workspace/source/charts/golang-experiment/templates/release.yaml
+Created Release golang-experiment-0-0-1 resource in namespace jx
+Updating PipelineActivity abayer-golang-experiment-master-1 with version 0.0.1
+Updated PipelineActivities abayer-golang-experiment-master-1 with release notes URL: https://github.com/abayer/golang-experiment/releases/tag/v0.0.1
+Step: build-step-promote-step7:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file golang-experiment-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: build-step-promote-step8:
+
+prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app golang-experiment version 0.0.1 to namespace jx-staging
+Created Pull Request: https://github.com/abayer/environment-cranestump-staging/pull/1
+
+Pull Request https://github.com/abayer/environment-cranestump-staging/pull/1 is merged at sha d0dd08da8c94f9dfd82b424eb620b03e9453d959
+Pull Request merged but we are not waiting for the update pipeline to complete!
+Could not find the service URL in namespace jx-staging for names golang-experiment, jx-golang-experiment, jx-staging-golang-experiment
